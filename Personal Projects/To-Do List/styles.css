@@ -68,3 +68,9 @@ hr {
     border: none;
     border-top: 2px solid #DFCCFB;
 }
+
+@media (max-width: 768px) {
+  body {
+    margin: 1rem;
+}
+}
