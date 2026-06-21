@@ -8,7 +8,9 @@ function createListItem() {
     if (!text) return;
 
     checkbox.setAttribute("type", "checkbox");
+    checkbox.setAttribute("class", "checkbox");
     label.setAttribute("id", "item" + count);
+    label.setAttribute("class", "handlee-regular");
     div.setAttribute("id", "itemBox" + count);
 
     checkbox.addEventListener("change", () => div.remove());

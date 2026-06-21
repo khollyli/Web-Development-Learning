@@ -1,0 +1,65 @@
+body {
+    background-color: #BEADFA;
+    margin: 3rem 5rem;
+}
+
+.title h1 {
+    color: #FFF8C9;
+
+}
+
+.handlee-regular {
+  font-family: "Handlee", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+label {
+    color: #FFF8C9;
+    font-size: 1.5em;
+}
+
+.list {
+    background-color: #D0BFFF;
+}
+
+button {
+    border-radius: 5px;
+    border-color: #D0BFFF;
+    background-color: #DFCCFB;
+    color: white;
+}
+
+.container {
+    background-color: #D0BFFF;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.textBox {
+    border-radius: 5px;
+    border-color: #D0BFFF;
+}
+
+.checkbox {
+    appearance: none;
+    border: 2px solid #FFF8C9;
+    border-radius: 2px;
+    background-color: #DFCCFB;
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.playfair-display-extrabold {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: italic;
+}
