@@ -63,3 +63,8 @@ button {
   font-weight: 800;
   font-style: italic;
 }
+
+hr {
+    border: none;
+    border-top: 2px solid #DFCCFB;
+}
