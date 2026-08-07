@@ -36,3 +36,7 @@ $(".btn").on("click", function() {
 
 // Animates a flash for a random button
 $("#" + randomChosenColour).fadeOut(100).fadeIn(100);
+
+function playSound(name) {
+    
+}
