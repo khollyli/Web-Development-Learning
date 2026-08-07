@@ -8,6 +8,7 @@ var level = 0;
 
 
 function nextSequence() {
+    userClickedPattern = [];
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColour = buttonColours[randomNumber];
     // Animates a flash for a random button
@@ -65,7 +66,6 @@ function checkAnswer(currentLevel) {
         if (userClickedPattern.length == gamePattern.length) {
             setTimeout(() => {
                 nextSequence();
-                userClickedPattern = [];
             }, 1000);
         }
         
@@ -80,13 +80,14 @@ function checkAnswer(currentLevel) {
         }, 200);
 
         $("#level-title").text("Game Over, Press Any Key to Restart");
+        startOver();
     }
+}
 
-    
-    
-
-    // if correct call nextSequence after a 1000ms delay
-    // once triggered, clear userClickedPattern array
+function startOver() {
+    level = 0;
+    gamePattern = [];
+    gameStart = false;
 }
 
 document.addEventListener('keydown', () => {
