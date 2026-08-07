@@ -1,11 +1,12 @@
 const buttonColours = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
+var gameStart = false;
+var level = 0;
 
 
 gamePattern.push(nextSequence());
 
-// Random number generator
 function nextSequence() {
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColour = buttonColours[randomNumber];
@@ -13,6 +14,13 @@ function nextSequence() {
     $("#" + randomChosenColour).fadeOut(100).fadeIn(100);
     playSound(randomChosenColour);
     // return randomChosenColour;
+
+    if (gameStart == true) {
+        level++;
+        const h1 = document.querySelector("#level-title");
+        h1.innerText = "Level " + level;
+        console.log("change text");
+    }
 }
 
 // for (var i = 0; i < 4; i++) {
@@ -50,4 +58,16 @@ function animatePress(currentColour) {
     setTimeout(function() {
         selectedBttn.classList.remove('pressed');
     }, 100);
+}
+
+if (gameStart == false) {
+    document.addEventListener('keydown', () => {
+        nextSequence();
+        const h1 = document.querySelector("#level-title");
+        h1.innerText = "Level 0";
+        gameStart = true;
+        console.log("gamestart true");
+    }, { once : true });
+
+
 }
