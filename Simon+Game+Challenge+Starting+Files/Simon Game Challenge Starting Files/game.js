@@ -12,6 +12,7 @@ function nextSequence() {
     // Animates a flash for a random button
     $("#" + randomChosenColour).fadeOut(100).fadeIn(100);
     playSound(randomChosenColour);
+    // return randomChosenColour;
 }
 
 // for (var i = 0; i < 4; i++) {
@@ -34,10 +35,19 @@ $(".btn").on("click", function() {
         playSound(userChosenColour);
     // }
     
+    animatePress(userChosenColour);
     console.log(userClickedPattern);
 });
 
 function playSound(name) {
     var audio = new Audio('./sounds/' + name + '.mp3');
     audio.play();
+}
+
+function animatePress(currentColour) {
+    const selectedBttn = document.querySelector('.' + currentColour);
+    selectedBttn.classList.add('pressed');
+    setTimeout(function() {
+        selectedBttn.classList.remove('pressed');
+    }, 100);
 }
