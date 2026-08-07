@@ -1,14 +1,17 @@
 const buttonColours = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
-var randomChosenColour = buttonColours[nextSequence()];
-var randomChosenSound = new Audio('./sounds/' + randomChosenColour + '.mp3');
-gamePattern.push(randomChosenColour);
+
+
+gamePattern.push(nextSequence());
 
 // Random number generator
 function nextSequence() {
     var randomNumber = Math.floor(Math.random() * 4);
-    return randomNumber;
+    var randomChosenColour = buttonColours[randomNumber];
+    // Animates a flash for a random button
+    $("#" + randomChosenColour).fadeOut(100).fadeIn(100);
+    playSound(randomChosenColour);
 }
 
 // for (var i = 0; i < 4; i++) {
@@ -27,16 +30,14 @@ $(".btn").on("click", function() {
     // can only use "this" or the following line of code below with a regular function (function() {}) not an arrow function (() => {})
     var userChosenColour = $(this).attr('id');
     userClickedPattern.push(userChosenColour);
-    if (userChosenColour == randomChosenColour) {
-        randomChosenSound.play();
-    }
+    // if (userChosenColour == randomChosenColour) {
+        playSound(userChosenColour);
+    // }
     
     console.log(userClickedPattern);
 });
 
-// Animates a flash for a random button
-$("#" + randomChosenColour).fadeOut(100).fadeIn(100);
-
 function playSound(name) {
-    
+    var audio = new Audio('./sounds/' + name + '.mp3');
+    audio.play();
 }
