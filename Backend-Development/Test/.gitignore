@@ -1,8 +1,6 @@
 #Project-wide
 .DS_Store
 
-#Testing git commit
-
 # Logs
 logs
 *.log
